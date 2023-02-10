@@ -1,27 +1,28 @@
-# FirstApp
+# Componente
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
+Se trata de una directiva o elemento que puede ser reutilizado. Es un elemento que compone a un todo y que esta compuesto.
 
-## Development server
+## Elementos de un componente
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Template, en este caso fue el "app.component.html".
+2. Archivo lógico, en este caso se trata de "app.component.ts".
+3. Un archivo de estilos CSS
+PUEDE TENER MÁS ARCHIVOS DEPENDIENDO DE LAS NECESIDADES DEL PROYECTO.
 
-## Code scaffolding
+## Módulo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Se trata de un contenedor de código dedicado a una aplicación o para cierta funcionalidad. Se define mediante una clase de @NgModule.
 
-## Build
+## Función de Patrón de diseño decorator
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Nos permite componer nuevos objetos a partir de objetos ya existentes sin utilizar directamente la herencia. podremos añadir dinámicamente funcionalidades a un objeto, constituyendo una alternativa a la herencia de clases.
 
-## Running unit tests
+## Menciona y describe los elementos importantes de un @NgModule
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+NgModulees un decorador que recibe un objeto de metadatos que definen el módulo (al final del artículo tienes más detalles sobre los metadatos. Los metadatos más importantes de un NgModule son:
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Declarations: Las vistas que pertenecen a tu módulo. Hay 3 tipos de clases de tipo vista: componentes, directivas y pipes.
+2. exports: Conjunto de declaraciones que deben ser accesibles para templates de componentes de otros módulos.
+3. Imports: Otros NgModules, cuyas clases exportadas son requeridas por templates de componentes de este módulo.
+4. Providers: Los servicios que necesita este módulo, y que estarán disponibles para toda la aplicación.
+5. Bootstrap: Define la vista raíz. Utilizado solo por el root module.
